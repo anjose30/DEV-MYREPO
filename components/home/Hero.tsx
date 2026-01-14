@@ -1,82 +1,20 @@
 "use client";
 
 import { motion } from "motion/react";
-import { useEffect, useState } from "react";
 
 export default function Hero() {
-  const [expandedIndex, setExpandedIndex] = useState(-1);
-  const [gridReady, setGridReady] = useState(false);
-
-  useEffect(() => {
-    if (expandedIndex < 3) {
-      const t = setTimeout(() => setExpandedIndex((i) => i + 1), 300);
-      return () => clearTimeout(t);
-    } else {
-      requestAnimationFrame(() => setGridReady(true));
-    }
-  }, [expandedIndex]);
-
   return (
     <div className="w-full h-full grid gap-2 items-center landscape:flex landscape:flex-row lg:flex p-4">
-      <div className="bg-linear-to-r from-elements to-elements2 w-full h-full rounded-4xl flex justify-center items-center">
-        <h1 className="text-white font-bold text-2xl">ANDRES MARTINEZ</h1>
-      </div>
-
-      <div className="w-full h-full p-2">
-        <div className="w-full h-full p-2 flex justify-center items-center">
-          <motion.div
-            layout
-            className={`grid gap-4 w-full grid-cols-5 grid-rows-6 lg:p-15 h-full py-10 landscape:px-10`}
+      <div className="bg-radial from-elements to-elements3 w-full h-full rounded-4xl flex flex-col justify-center items-center gap-2">
+        <div className="flex gap-2 items-center justify-center">
+          <h1
+            className="text-white font-bold text-6xl text-center"
           >
-            <motion.div
-              layout={gridReady ? true : "position"}
-              transition={{ layout: { duration: 4, ease: "easeInOut" } }}
-              className={
-                `bg-background rounded-2xl p-2 hover:scale-[1.02] transition col-span-3 row-span-3` +
-                (expandedIndex < 0
-                  ? " opacity-0 scale-75"
-                  : " opacity-100 scale-100")
-              }
-            >
-              1
-            </motion.div>
-            <motion.div
-              layout={gridReady ? true : "position"}
-              transition={{ layout: { duration: 4, ease: "easeInOut" } }}
-              className={
-                `bg-background rounded-2xl p-2 hover:scale-[1.02] transition col-span-2 row-span-3 col-start-4` +
-                (expandedIndex < 1
-                  ? " opacity-0 scale-75"
-                  : " opacity-100 scale-100")
-              }
-            >
-              2
-            </motion.div>
-            <motion.div
-              layout={gridReady ? true : "position"}
-              transition={{ layout: { duration: 4, ease: "easeInOut" } }}
-              className={
-                `bg-background rounded-2xl p-2 hover:scale-[1.02] transition col-span-3 row-span-3 col-start-3 row-start-4` +
-                (expandedIndex < 2
-                  ? " opacity-0 scale-75"
-                  : " opacity-100 scale-100")
-              }
-            >
-              3
-            </motion.div>
-            <motion.div
-              layout={gridReady ? true : "position"}
-              transition={{ layout: { duration: 4, ease: "easeInOut" } }}
-              className={
-                `bg-background rounded-2xl p-2 hover:scale-[1.02] transition col-span-2 row-span-3 col-start-1 row-start-4` +
-                (expandedIndex < 3
-                  ? " opacity-0 scale-75"
-                  : " opacity-100 scale-100")
-              }
-            >
-              4
-            </motion.div>
-          </motion.div>
+            ANDRES MARTINEZ
+          </h1>
+        </div>
+        <div className="text-2xl font-medium text-white">
+          <h2>Desarrollador Web</h2>
         </div>
       </div>
     </div>

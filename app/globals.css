@@ -2,14 +2,90 @@
 
 @theme {
   --color-bg: #132426;
-  --color-background: #EBEFF2;
-  --color-elements: #CCD96C;
-  --color-elements2: #E8F29B;
-  --color-elements3: #38401E;
-  --color-elements4: #2A3340;
+  --color-background: #faf0e6;
+  --color-elements: #08401B;
+  --color-elements2: #0A5926;
+  --color-elements3: #03A64A;
+  --color-elements4: #132426;
 }
 
 body {
   background-color: #ffffff;
 }
 
+.liquid-glass {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(163, 163, 163, 0.35),
+    rgba(255,255,255,0.05)
+  );
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  border-radius: 1rem;
+
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.5),
+    0 10px 30px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+/* Brillo líquido */
+.liquid-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 30% 20%,
+    rgba(139, 139, 139, 0.8),
+    rgba(255,255,255,0) 40%
+  );
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Reflejo inferior */
+.liquid-glass::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.15),
+    rgba(255,255,255,0) 60%
+  );
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.logo-glass {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo base de letras */
+.logo-glass .letter {
+  position: absolute;
+  font-size: 2.4rem;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  color: rgba(255,255,255,0.9);
+  text-shadow:
+    0 1px 3px rgba(0,0,0,0.25),
+    0 0 8px rgba(255,255,255,0.4);
+  pointer-events: none;
+}
+
+/* A arriba a la izquierda */
+.logo-glass .a {
+  transform: translate(-6px, -6px);
+}
+
+/* J abajo a la derecha */
+.logo-glass .j {
+  transform: translate(6px, 6px);
+  opacity: 0.85;
+}
