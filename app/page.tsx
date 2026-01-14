@@ -3,14 +3,19 @@ import Projects from "@/components/home/Projects";
 
 export default function Home() {
   return (
-    <div className="w-full grid overflow-x-hidden bg-background">
-      <section className="w-full min-h-svh">
+    <div
+      id="page-scroll"
+      className="w-full h-screen overflow-y-scroll overflow-x-hidden bg-bg"
+    >
+      <section className="w-full h-svh py-2">
         <Hero />
       </section>
-      <section className="w-full min-h-svh ">
+      
+      <section className="w-full min-h-svh">
         <Projects />
       </section>
-      <section className="w-full min-h-svh">About me <span className="text-green-500">scroll lateral como gta</span></section>
+      
+      <section className="w-full min-h-svh">About me</section>
       <section className="w-full min-h-svh">Lenguajes</section>
     </div>
   );
