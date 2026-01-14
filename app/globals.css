@@ -2,6 +2,11 @@
 
 @theme {
   --color-bg: #132426;
+  --color-background: #EBEFF2;
+  --color-elements: #CCD96C;
+  --color-elements2: #E8F29B;
+  --color-elements3: #38401E;
+  --color-elements4: #2A3340;
 }
 
 body {
