@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div
       id="page-scroll"
-      className="w-full h-screen bg-elements4 grid xl:grid-cols-2 overflow-x-hidden"
+      className="w-full h-screen bg-white grid xl:grid-cols-2 overflow-x-hidden"
     >
       <section className="h-svh">
         <Hero />
