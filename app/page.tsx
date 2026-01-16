@@ -1,15 +1,17 @@
 import Hero from "@/components/home/Hero";
-import Navbar from "@/components/Navbar";
+import Info from "@/components/home/Info";
 
 export default function Home() {
   return (
     <div
       id="page-scroll"
-      className="w-full h-screen overflow-y-scroll overflow-x-hidden bg-elements4"
+      className="w-full h-screen bg-elements4 grid xl:grid-cols-2 overflow-x-hidden"
     >
-
-      <section className="w-full h-svh py-2">
+      <section className="h-svh">
         <Hero />
+      </section>
+      <section className="h-svh">
+        <Info />
       </section>
     </div>
   );
